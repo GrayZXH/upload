@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>input</title>
+	<style>
+		.filearea{
+			width: 200px;
+			height: 50px;
+			position: relative;
+			top: 0;
+			left: 0;
+		}
+		#fileField{
+			background-color: red;
+			width: 100%;
+			position: absolute;
+			z-index: 99;
+			left: 0;
+			top: 0;
+			opacity: 0;
+			filter: alpha(opacity=0);
+		}
+		#textfield , .uploadbtn{
+			width: 100%;
+			border: none;
+			margin-bottom: 5px;
+			padding: 8px 0;
+			border-radius: 3px;
+		}
+		#textfield{
+			background-color: blue;
+			overflow: hidden;
+			color: #fff;
+		}
+		.uploadbtn{
+		}
+		::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		    color:    #fff;
+		}
+		:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		   color:    #fff;
+		}
+		::-moz-placeholder { /* Mozilla Firefox 19+ */
+		   color:    #fff;
+		   opacity:  1;
+		}
+		:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		   color:    #fff;
+		}
+	</style>
+</head>
+<body>
+	<div class="filearea">                             
+	    <input type="file" name="file" id="fileField" onchange="document.getElementById('textfield').value=this.value"/> 
+	    <input type='text' id="textfield" placeholder="   选择文件"/> 
+	    <button class="uploadbtn">上传</button>
+	</div>
+</body>
+</html>
